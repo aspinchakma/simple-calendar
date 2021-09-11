@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calendar</title>
+    <!-- tailwind css link  -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- exteranl css link  -->
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body style="background-color: #aed6dc;">
+    <main>
+        <section class=" w-1/4 mx-auto text-center bg-blue-700 rounded mt-20 overflow-hidden" id="mini-container">
+            <p style="background-color: #d72631;" class="text-6xl font-bold text-white pt-4 pb-8" id="month">Month</p>
+            <p class="text-5xl text-white font-semibold pt-4" id="day">Day</p>
+            <p class="text-8xl text-white font-bold p-4" id="date">Date</p>
+            <p class="text-5xl text-white font-semibold pb-8" id="year">Year</p>
+
+        </section>
+    </main>
+
+
+    <script>
+        const date = document.getElementById('date');
+        const month = document.getElementById('month');
+        const day = document.getElementById('day');
+        const year = document.getElementById('year');
+
+
+        // this is week array 
+        const daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        // this is month array 
+
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+
+        const mainDate = new Date();
+        const myDate = mainDate.getDate();
+        const myDay = mainDate.getDay();
+        const myMonth = mainDate.getMonth();
+        const myYear = mainDate.getFullYear();
+
+        date.innerText = myDate < 10 ? `0${myDate}` : `${myDate}`;
+        day.innerText = daysInWeek[myDay];
+        month.innerText = months[myMonth];
+        year.innerText = myYear;
+
+    </script>
+</body>
+
+</html>

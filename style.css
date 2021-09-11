@@ -1,0 +1,11 @@
+#mini-container{
+    cursor: pointer;
+}
+
+#mini-container:hover{
+    transform: scale(0.970);
+    transition:transform 0.7s ease-in-out;
+};
+
+
+
